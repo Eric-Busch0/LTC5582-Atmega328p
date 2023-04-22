@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.cpp": "cpp",
+        "uart.h": "c",
+        "comparator.h": "c",
+        "adc.h": "c"
+    }
+}
