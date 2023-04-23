@@ -8,7 +8,7 @@
 
 void setup()
 {
-    ltc5582_init();
+    ltc5582_init(LTC_SIG_DETECT_EN);
     uart_init(115200);
 }
 int main()

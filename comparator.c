@@ -26,10 +26,24 @@ void comparator_init(void)
 {
     cli();
     
-    ACSR &= ~(1 << ACD);
+    comparator_enable();
     ACSR |= (1 << ACIE);
 
     RF_CAPTURE_DIRREG |= (1 << RF_CAPTURE_DIR_BIT);
     RF_CAPTURE_PORT &= ~RF_CAPTURE_PIN;
     sei();
+}
+void comparator_enable(void)
+{
+    ACSR &= ~(1 << ACD);
+}
+void comparator_disable(void)
+{
+    ACSR |= (1 << ACD);
+    
+}
+
+uint8_t comparator_get_status(void)
+{
+    return ACSR & (1 << ACO) ? 1 : 0;
 }

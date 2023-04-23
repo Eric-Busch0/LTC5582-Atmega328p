@@ -4,6 +4,8 @@
 #include <stdint.h>
 
 void comparator_init(void);
-uint8_t comparator_is_triggered(void);
+void comparator_enable(void);
+void comparator_disable(void);
+uint8_t comparator_get_status(void);
 
 #endif
