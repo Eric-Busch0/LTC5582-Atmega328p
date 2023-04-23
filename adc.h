@@ -1,6 +1,7 @@
 #ifndef ADC_H
 #define ADC_H
 #include <stdint.h>
+#include <avr/io.h>
 
 typedef struct{
     uint8_t vref;
@@ -15,5 +16,12 @@ typedef struct{
 
 void adc_init(adc_cfg_t *cfg);
 uint16_t adc_read(uint8_t channel);
-
+static inline void adc_disable(void)
+{
+    ADCSRA &= ~(1 << ADEN);
+}
+static inline void adc_enable(void)
+{
+    ADCSRA |= (1 << ADEN);
+}
 #endif
