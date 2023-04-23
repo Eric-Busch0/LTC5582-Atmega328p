@@ -19,8 +19,7 @@ int main()
     while (1)
     {
         int8_t power = ltc5582_getPower();
-
-
+        
         snprintf(msg, sizeof(msg), "Read:%u\r\n", power);
         uart_write(msg, strlen(msg));
         _delay_ms(1000);
