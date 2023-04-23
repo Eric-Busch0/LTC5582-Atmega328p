@@ -31,4 +31,4 @@ flash:
 
 .PHONY: clean
 clean:
-	rm build/* *.hex *.elf *.s *.lss *.o *.ii
+	rm build/*
