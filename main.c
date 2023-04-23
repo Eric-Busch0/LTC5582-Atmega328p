@@ -5,11 +5,13 @@
 #include "adc.h"
 #include "uart.h"
 #include "ltc5582.h"
+#include "i2c.h"
 
 void setup()
 {
     ltc5582_init(LTC_SIG_DETECT_EN);
     uart_init(115200);
+    i2c_init();
 }
 int main()
 {

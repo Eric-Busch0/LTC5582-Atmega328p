@@ -4,7 +4,8 @@ SRC=${TARGET_NAME}.c
 SRC+=adc.c \
 	comparator.c\
 	ltc5582.c\
-	uart.c
+	uart.c\
+	i2c.c
 CDEFS+=-DF_CPU=16000000
 
 HEX = ${TARGET_NAME}.hex
